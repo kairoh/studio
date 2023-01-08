@@ -78,6 +78,7 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           generate_release_notes: true
+          discussion_category_name: Announcements
           files: web-ui/target/quarkus-app/${{env.zip-name}}
 
   build-native:
