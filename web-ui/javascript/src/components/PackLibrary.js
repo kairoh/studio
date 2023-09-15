@@ -443,7 +443,7 @@ class PackLibrary extends React.Component {
                                          }
                                      }}
                                      onDragEnd={event => {
-                                         // Reorder on device only if order changed
+                                         // Reorder on device only if order changed-
                                          if (this.state.beforeReordering.reduce((acc,p)=>acc+','+p.uuid, '') !== this.state.device.packs.reduce((acc,p)=>acc+','+p.uuid, '')) {
                                              console.log("Order changed, reordering...");
                                              let uuids = this.state.device.packs.map(p => p.uuid);
