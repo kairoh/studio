@@ -414,7 +414,7 @@ class PackLibrary extends React.Component {
                             {this.state.device.packs.map((pack,idx) =>
                                 <div key={pack.uuid}
                                      draggable={true}
-                                     className={`pack-tile pack-${pack.format} ${this.isPackDraggable(pack) ? 'pack-draggable' : 'pack-not-draggable'} ${pack.nightModeAvailable && 'pack-night-mode'}`}
+                                     className={`pack-tile pack-${pack.format} ${this.isPackDraggable(pack) ? 'pack-draggable' : 'pack-draggable'} ${pack.nightModeAvailable && 'pack-night-mode'}`}
                                      onDragStart={event => {
                                          event.dataTransfer.setData("device-pack", JSON.stringify(pack));
                                          this.setState({reordering: pack, beforeReordering: [...this.state.device.packs]});
@@ -455,7 +455,7 @@ class PackLibrary extends React.Component {
                                         <span>{t(`library.format.${pack.format}`)}</span>
                                     </div>
                                     <div className="pack-thumb" title={pack.nightModeAvailable && t('library.nightMode')}>
-                                        <img src={pack.image || defaultImage} alt="" width="128" height="128" draggable={false} />
+                                        <img src={pack.image || defaultImage} alt="" width="128" height="128" draggable={true} />
                                         <div className="pack-version"><span>{`v${pack.version}`}</span></div>
                                         {pack.official && <div className="pack-ribbon"><span>{t('library.official')}</span></div>}
                                     </div>
@@ -495,7 +495,7 @@ class PackLibrary extends React.Component {
                                 <div key={group.uuid}
                                      title={group.uuid}
                                      draggable={this.isPackDraggable(group.packs[0])}
-                                     className={`pack-tile ${this.isPackDraggable(group.packs[0]) ? 'pack-draggable' : 'pack-not-draggable'} ${group.packs[0].nightModeAvailable && 'pack-night-mode'}`}
+                                     className={`pack-tile ${this.isPackDraggable(group.packs[0]) ? 'pack-draggable' : 'pack-draggable'} ${group.packs[0].nightModeAvailable && 'pack-night-mode'}`}
                                      onDragStart={event => {
                                          // Drag first pack
                                          event.dataTransfer.setDragImage(event.target.querySelector('.pack-entry'), 0, 0);
