@@ -494,7 +494,7 @@ class PackLibrary extends React.Component {
                             {this.state.library.packs.map(group =>
                                 <div key={group.uuid}
                                      title={group.uuid}
-                                     draggable={this.isPackDraggable(group.packs[0])}
+                                     draggable={true}
                                      className={`pack-tile ${this.isPackDraggable(group.packs[0]) ? 'pack-draggable' : 'pack-draggable'} ${group.packs[0].nightModeAvailable && 'pack-night-mode'}`}
                                      onDragStart={event => {
                                          // Drag first pack
